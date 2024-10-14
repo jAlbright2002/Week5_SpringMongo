@@ -1,4 +1,4 @@
-package ie.atu.week5.customerapp;
+package ie.atu.week5.customerapp.Order;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
