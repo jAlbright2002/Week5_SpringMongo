@@ -1,4 +1,4 @@
-package ie.atu.week5.customerapp;
+package ie.atu.week5.customerapp.Order;
 
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
@@ -19,6 +19,6 @@ public class Order {
     private String orderDetails;
     @DateTimeFormat(pattern = "YYYY-DD-MM")
     private String orderDate;
-    @NotBlank(message = "CustomerId must not be blank")
+
     private String customerId;
 }

@@ -1,5 +1,7 @@
-package ie.atu.week5.customerapp;
+package ie.atu.week5.customerapp.Customer;
 
+import ie.atu.week5.customerapp.Customer.Customer;
+import ie.atu.week5.customerapp.Customer.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

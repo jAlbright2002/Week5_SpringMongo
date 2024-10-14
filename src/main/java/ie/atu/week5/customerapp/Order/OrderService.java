@@ -1,4 +1,4 @@
-package ie.atu.week5.customerapp;
+package ie.atu.week5.customerapp.Order;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

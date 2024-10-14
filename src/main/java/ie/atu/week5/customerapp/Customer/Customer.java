@@ -1,4 +1,4 @@
-package ie.atu.week5.customerapp;
+package ie.atu.week5.customerapp.Customer;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
