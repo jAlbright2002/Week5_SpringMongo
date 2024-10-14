@@ -11,35 +11,30 @@ import java.util.List;
 @RequestMapping("/orders")
 public class OrderController {
 
-    private final OrderRepository orderRepository;
+    private final OrderService service;
 
-    public OrderController(OrderRepository orderRepository) {
-        this.orderRepository = orderRepository;
+    @Autowired
+    public OrderController(OrderService service) {
+        this.service = service;
     }
 
     @GetMapping
     public List<Order> getAllOrders() {
-        return orderRepository.findAll();
+        return service.getAllOrders();
     }
 
     @GetMapping("/customer/{customerId}")
     public ResponseEntity<List<Order>> getOrdersByCustomerId(@PathVariable String customerId) {
-        List<Order> orders = orderRepository.findByCustomerId(customerId);
-        return ResponseEntity.ok(orders);
+        return service.getOrdersByCustomerId(customerId);
     }
 
     @PostMapping
     public ResponseEntity<Order> createOrder(@Valid @RequestBody Order order) {
-        Order savedOrder = orderRepository.save(order);
-        return ResponseEntity.ok(savedOrder);
+        return ResponseEntity.ok(service.createOrder(order));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteOrder(@PathVariable String id) {
-        if (orderRepository.existsById(id)) {
-            orderRepository.deleteById(id);
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.notFound().build();
+        return service.deleteOrder(id);
     }
 }
